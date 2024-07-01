@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batch Script Launcher</title>
+    <hta:application id="oHTA"
+        border="thin"
+        borderStyle="normal"
+        caption="yes"
+        sysMenu="yes"
+        maximizeButton="yes"
+        minimizeButton="yes"
+        showInTaskBar="yes"
+        singleInstance="yes"
+        windowState="normal"
+    />
+    <style>
+        body { font-family: Arial, sans-serif; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+    <script>
+        function runBatch(batchFile) {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run(batchFile, 1, false);
+        }
+    </script>
+</head>
+<body>
+    <h1>Batch Script Launcher</h1>
+    <button onclick="runBatch('script1.bat')">Run Script 1</button>
+    <button onclick="runBatch('script2.bat')">Run Script 2</button>
+    <button onclick="runBatch('script3.bat')">Run Script 3</button>
+</body>
+</html>
